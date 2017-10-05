@@ -57,7 +57,8 @@ if($status==false){
 <style>div{padding: 10px;font-size:16px;}</style>
 </head>
 <body>
-
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/jquery.quicksearch.js" type="text/javascript"></script>
 <header>
   <nav>
     <div class="container-fluid">
@@ -67,6 +68,9 @@ if($status==false){
 </header>
 
 <p class="list">登録一覧</p>
+<form action="#">
+    <p>登録書籍検索　<input type="text" name="search" value="" id="search" /></p>
+</form>
 <table>
 <tr>
 <th>時間</th>
@@ -81,5 +85,12 @@ if($status==false){
 <div>※タイトル（書籍の名前）をクリックすると内容を変更できます</div>
 <div><a class="navbar-brand" href="index.php">登録画面に戻る</a></div>
 
+<script>
+    $(function(){
+        $('input#search').quicksearch('table tbody tr');
+    });
+</script>
+
 </body>
+
 </html>
